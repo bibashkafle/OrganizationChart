@@ -1,0 +1,37 @@
+﻿[
+    {
+        "NodeId": 1,
+        "ParentNodeId": null,
+        "NodeText": "Head",
+        "Tooltip": "parent node",
+        "IsLeaf": false
+    },
+	{
+		"NodeId": 2,
+		"ParentNodeId": 1,
+		"NodeText": "Left",
+		"Tooltip": "Left node",
+		"IsLeaf": false
+	},
+	{
+		"NodeId": 3,
+		"ParentNodeId": 1,
+		"NodeText": "Right",
+		"Tooltip": "Right node",
+		"IsLeaf": false
+	},
+	{
+		"NodeId": 4,
+		"ParentNodeId": 1,
+		"NodeText": "Mid Node",
+		"Tooltip": "Node in the middle",
+		"IsLeaf": false
+	},
+	{
+		"NodeId": 5,
+		"ParentNodeId": 3,
+		"NodeText": "Second Level Child 1",
+		"Tooltip": "Second Level Child 1",
+		"IsLeaf": false
+	}
+]

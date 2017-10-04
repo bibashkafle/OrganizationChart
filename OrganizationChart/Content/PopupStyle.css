@@ -1,0 +1,98 @@
+﻿/* Outer */
+.popup {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.75);
+}
+
+/* Inner */
+.popup-inner {
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+}
+
+h2,
+a,
+p {
+    font-family: Arial, Sans-Serif;
+}
+/* Pop UP Forms */
+.popup-form .pop-body {
+    width: 100%;
+    font-family: Arial, Sans-Serif;
+}
+
+    .popup-form .pop-body .form-element {
+        margin-bottom: 10px;
+        clear: both;
+    }
+
+    .popup-form .pop-body label {
+        width: 100%;
+        margin: 10px 0;
+        display: block;
+    }
+
+    .popup-form .pop-body input.form-ctrl,
+    .popup-form .pop-body select.form-ctrl {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: #555;
+        display: block;
+        font-size: 14px;
+        height: 34px;
+        padding: 6px 12px;
+        width: 100%;
+    }
+
+/* Close Button */
+.popup-close {
+    width: 30px;
+    height: 30px;
+    padding-top: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transition: ease 0.25s all;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    border-radius: 1000px;
+    background: rgba(0,0,0,0.8);
+    font-family: Arial, Sans-Serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100%;
+    color: #fff;
+}
+
+    .popup-close:hover {
+        -webkit-transform: translate(50%, -50%) rotate(180deg);
+        transform: translate(50%, -50%) rotate(180deg);
+        background: rgba(0,0,0,1);
+        text-decoration: none;
+    }
+/*To remove add/delete action button*/
+
+.google-visualization-orgchart-node:hover .tree_nodeAddRemoveOptContainer {
+    display: block;
+}
+
+.google-visualization-orgchart-node .tree_nodeAddRemoveOptContainer {
+    display: none;
+}

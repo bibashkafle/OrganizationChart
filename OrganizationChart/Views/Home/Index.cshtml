@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="~/Scripts/Tree.js"></script>
+<link href="~/Content/PopupStyle.css" rel="stylesheet" />
+<script type="text/javascript">
+    var conf = {         
+         getTree: 'http://localhost:49968/Home/GetTree/'
+        , addNode: 'save'
+        , updateNode: 'edit'
+        , deleteNode: 'delete'
+        , chartDiv: 'chart_div'
+    };
+
+    //["chartDiv", "getTree", "addNode", "updateNode", "deleteNode"]
+
+        google.charts.load('current', { packages: ["orgchart"] });
+        $(document).ready(function () {
+            var chart = new tree(conf);
+
+            $("#btnOrgChart").click(function () {
+                chart.makeTree();
+            });
+
+        });
+</script>
+
+
+<div class="container">
+    <div id="chart_div">
+    </div>
+    <input type="button" name="btnOrgChart" id="btnOrgChart" value="Org Chart" />
+</div>
