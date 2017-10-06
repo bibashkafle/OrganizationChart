@@ -19,15 +19,15 @@ namespace OrganizationChart.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult GetTree()
         {
             var list = _treeOperation.GetTree();                          
             return Json(list,JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public JsonResult SaveTree()
+        [HttpPost]
+        public JsonResult SaveTree(FormCollection request)
         {
             /*
              * IsLeaf false
@@ -37,12 +37,12 @@ namespace OrganizationChart.Controllers
              * chartId tree_7729568916
              * toolTip fdf
              */
-            var IsLeaf = Request.Form["IsLeaf"];
-            var NodeId = Request.Form["NodeId"];
-            var NodeText = Request.Form["NodeText"];
-            var ParentNodeId = Request.Form["ParentNodeId"];
-            var chartId = Request.Form["chartId"];
-            var toolTip = Request.Form["toolTip"];
+            var IsLeaf = request["IsLeaf"];
+            var NodeId = request["NodeId"];
+            var NodeText = request["NodeText"];
+            var ParentNodeId = request["ParentNodeId"];
+            var chartId = request["chartId"];
+            var toolTip = request["toolTip"];
 
             var res = _treeOperation.GetTree();
            return Json(res, JsonRequestBehavior.AllowGet);

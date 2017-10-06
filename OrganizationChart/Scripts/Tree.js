@@ -123,7 +123,7 @@ tree.prototype.execAjax = function (pageUrl, dataToSend) {
     //console.log(dataToSend);
     var dataToReturn;
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: pageUrl,
         async: false,
         data: dataToSend,
