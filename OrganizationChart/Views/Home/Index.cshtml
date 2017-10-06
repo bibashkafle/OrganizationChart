@@ -13,13 +13,11 @@
 <script type="text/javascript">
     var conf = {         
          getTree: 'http://localhost:49968/Home/GetTree/'
-        , addNode: 'save'
+        , addNode: 'http://localhost:49968/Home/SaveTree'
         , updateNode: 'edit'
         , deleteNode: 'delete'
         , chartDiv: 'chart_div'
     };
-
-    //["chartDiv", "getTree", "addNode", "updateNode", "deleteNode"]
 
         google.charts.load('current', { packages: ["orgchart"] });
         $(document).ready(function () {

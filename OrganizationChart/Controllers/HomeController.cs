@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Newtonsoft.Json;
+﻿using System.Web.Mvc;
 using OrganizationChart.Models;
+using OrganizationChart.Service;
 
 namespace OrganizationChart.Controllers
 {
     public class HomeController : Controller
     {
-        private string DATABASE = @"C:\Users\bibash\documents\visual studio 2017\Projects\OrganizationChart\OrganizationChart\Database.json";
+        TreeOperation _treeOperation;
+        public HomeController()
+        {
+            _treeOperation = new TreeOperation();
+        }
+        
         // GET: Home
         public ActionResult Index()
         {
@@ -17,19 +21,31 @@ namespace OrganizationChart.Controllers
 
         [HttpGet]
         public JsonResult GetTree()
-        {       
-            var list = JsonConvert.DeserializeObject<List<Tree>>(System.IO.File.ReadAllText(DATABASE));           
+        {
+            var list = _treeOperation.GetTree();                          
             return Json(list,JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public JsonResult SaveTree(Tree obj)
+        public JsonResult SaveTree()
         {
-            var list = JsonConvert.DeserializeObject<List<Tree>>(System.IO.File.ReadAllText(DATABASE));
-            list.Add(obj);
-            var json = JsonConvert.SerializeObject(list);
-            System.IO.File.WriteAllText(DATABASE, json);
-            return Json(list, JsonRequestBehavior.AllowGet);
+            /*
+             * IsLeaf false
+             * NodeId 2
+             * NodeText fdf
+             * ParentNodeId 1
+             * chartId tree_7729568916
+             * toolTip fdf
+             */
+            var IsLeaf = Request.Form["IsLeaf"];
+            var NodeId = Request.Form["NodeId"];
+            var NodeText = Request.Form["NodeText"];
+            var ParentNodeId = Request.Form["ParentNodeId"];
+            var chartId = Request.Form["chartId"];
+            var toolTip = Request.Form["toolTip"];
+
+            var res = _treeOperation.GetTree();
+           return Json(res, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -37,7 +53,6 @@ namespace OrganizationChart.Controllers
         {
             return null;
         }
-
        
     }
 }

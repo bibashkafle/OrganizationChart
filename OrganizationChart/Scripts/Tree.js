@@ -80,10 +80,9 @@ tree.prototype.makeTree = function (jsonString) {
         addBtn.setAttribute("class", "tree_nodeAddRemoveOpt");
         addBtn.setAttribute("id", "btnAdd_" + rowId);
         addBtn.addEventListener("click", function (e) {
-            alert("Add Node");
-            //obj[0]["MethodName"] = conf.insert;
-            //obj[0]["url"] = conf.url;
-            //tree.prototype.MakepopUp(obj);
+            alert("Add Node");            
+            obj[0]["url"] = conf.addNode;
+            tree.prototype.MakepopUp(obj);
         }, false);
 
         var removeBtn = null;
